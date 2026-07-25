@@ -8,7 +8,7 @@ app.get("/api/message", (req, res) => {
     res.json({
         lines: [
             "Hey...",
-            “May your birthday mark the beginning of a year filled with endless happiness, unforgettable memories, and all the dreams your heart wishes to achieve. Happy Birthday! 🎂✨”
+            "May your birthday mark the beginning of a year filled with endless happiness, unforgettable memories, and all the dreams your heart wishes to achieve. Happy Birthday! 🎂✨"
         ]
     });
 });
