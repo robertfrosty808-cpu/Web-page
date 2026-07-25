@@ -8,11 +8,7 @@ app.get("/api/message", (req, res) => {
     res.json({
         lines: [
             "Hey...",
-            "I know I’m not there with you today",
-            "But I made this just for you ❤️",
-            "Even miles apart...",
-            "You mean everything to me",
-            "Happy Birthday 🎉"
+            “May your birthday mark the beginning of a year filled with endless happiness, unforgettable memories, and all the dreams your heart wishes to achieve. Happy Birthday! 🎂✨”
         ]
     });
 });
