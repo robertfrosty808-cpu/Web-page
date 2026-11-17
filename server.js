@@ -1,18 +1,34 @@
-const express = require("express");
-const app = express();
-const PORT = process.env.PORT || 3000;
 
-app.use(express.static(__dirname));
+const content = document.getElementById("content");
 
-app.get("/api/message", (req, res) => {
-    res.json({
-        lines: [
-            "Hey...",
-            "May your birthday mark the beginning of a year filled with endless happiness, unforgettable memories, and all the dreams your heart wishes to achieve. Happy Birthday! 🎂✨"
-        ]
-    });
-});
+const lines = [
+    "Hey...",
+    "May your birthday mark the beginning of a year filled with endless happiness, unforgettable memories, and all the dreams your heart wishes to achieve. Happy Birthday! 🎂✨"
+];
 
-app.listen(PORT, () => {
-    console.log(`Server running at http://localhost:${PORT}`);
-});
+let index = 0;
+
+function showMessage() {
+    if (index < lines.length) {
+        const message = document.createElement("p");
+        message.textContent = lines[index];
+        content.appendChild(message);
+
+        index++;
+    }
+}
+
+// Display messages one by one
+function startMessage() {
+    showMessage();
+
+    const interval = setInterval(() => {
+        showMessage();
+
+        if (index >= lines.length) {
+            clearInterval(interval);
+        }
+    }, 2000);
+}
+
+startMessage();
