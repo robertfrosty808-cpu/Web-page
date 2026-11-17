@@ -1,43 +1,85 @@
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Main Background */
 body {
-  background: #1e1e1e;
-  font-family: Arial;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+    background: #1e1e1e;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
 }
 
+/* Browser Window */
 .browser {
-  width: 400px;
-  background: white;
-  border-radius: 10px;
-  overflow: hidden;
+    width: 100%;
+    max-width: 400px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
 }
 
+/* Browser Top Bar */
 .top-bar {
-  background: #ddd;
-  padding: 10px;
-  display: flex;
-  align-items: center;
+    background: #ddd;
+    padding: 10px;
+    display: flex;
+    align-items: center;
 }
 
+/* Browser Dots */
 .dot {
-  height: 10px;
-  width: 10px;
-  border-radius: 50%;
-  margin-right: 5px;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    margin-right: 5px;
+    flex-shrink: 0;
 }
 
-.red { background: red; }
-.yellow { background: yellow; }
-.green { background: green; }
+.red {
+    background: red;
+}
 
+.yellow {
+    background: yellow;
+}
+
+.green {
+    background: green;
+}
+
+/* Fake URL */
 .url {
-  margin-left: 10px;
-  font-size: 12px;
+    margin-left: 10px;
+    font-size: 12px;
+    color: #333;
 }
 
+/* Message Content */
 .content {
-  padding: 20px;
-  font-size: 18px;
+    padding: 20px;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #222;
+    overflow-wrap: anywhere;
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+    .browser {
+        max-width: 100%;
+    }
+
+    .content {
+        font-size: 16px;
+        padding: 18px;
+    }
 }
