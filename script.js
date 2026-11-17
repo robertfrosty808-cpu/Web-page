@@ -1,9 +1,15 @@
+
 const content = document.getElementById("content");
 
-async function loadMessage() {
-    const res = await fetch("/api/message");
-    const data = await res.json();
+// Birthday message
+const data = {
+    lines: [
+        "Hey...",
+        "May your birthday mark the beginning of a year filled with endless happiness, unforgettable memories, and all the dreams your heart wishes to achieve. Happy Birthday! 🎂✨"
+    ]
+};
 
+function loadMessage() {
     let i = 0;
 
     function typeLine() {
@@ -11,6 +17,7 @@ async function loadMessage() {
 
         let line = data.lines[i];
         let p = document.createElement("p");
+
         content.appendChild(p);
 
         let j = 0;
@@ -28,6 +35,11 @@ async function loadMessage() {
 
         typeChar();
     }
+
+    typeLine();
+}
+
+loadMessage();
 
     typeLine();
 }
